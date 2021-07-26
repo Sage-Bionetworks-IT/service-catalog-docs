@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# Inputs
 SC_ENDPOINT=$1         # i.e. https://sc.sageit.org
 SYNAPSE_TOKEN_FILE=$2  # Absolute path to file containing Synapse PAT
+
 CURRENT_DIR=$(pwd)
 CURRENT_USER=$(whoami)
 USER_DIR=/Users/${CURRENT_USER}
@@ -22,5 +24,6 @@ if [ -f "${AWS_CONFIG_FILE}" ]; then
   echo "Append this profile to your AWS CLI configurations in ${AWS_CONFIG_FILE}"
   echo "${PROFILE}"
 else
+  mkdir -p ${AWS_CONFIG_DIR}
   echo "${PROFILE}" > ${AWS_CONFIG_FILE}
 fi
