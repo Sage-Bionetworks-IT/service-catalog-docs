@@ -9,10 +9,13 @@ CURRENT_USER=$(whoami)
 USER_DIR=/Users/${CURRENT_USER}
 AWS_CONFIG_DIR=${USER_DIR}/.aws
 
+echo "Create credentials process script.."
 cp ${CURRENT_DIR}/synapse_creds.sh ${AWS_CONFIG_DIR}/synapse_creds.sh
 chmod +x ${AWS_CONFIG_DIR}/synapse_creds.sh
+echo "Done"
 
 # Create or configure the AWS CLI profile
+echo "Configure AWS CLI profile for the service catalog.."
 AWS_CONFIG_FILE=${AWS_CONFIG_DIR}/config
 PROFILE=$(echo "
 [profile service-catalog]
@@ -26,4 +29,5 @@ if [ -f "${AWS_CONFIG_FILE}" ]; then
 else
   mkdir -p ${AWS_CONFIG_DIR}
   echo "${PROFILE}" > ${AWS_CONFIG_FILE}
+  echo "Done"
 fi
