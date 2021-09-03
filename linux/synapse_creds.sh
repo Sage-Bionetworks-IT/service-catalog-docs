@@ -2,7 +2,7 @@
 
 # Inputs
 SC_ENDPOINT=$1  # i.e. https://sc.sageit.org
-SYNAPSE_TOKEN_FILE=$2  # Absolute path to the file containing the Synapse PAT (i.e. /Users/jsmith/.aws/synapse_oidc_token)
+SYNAPSE_TOKEN_FILE=$2  # Absolute path to the file containing the Synapse PAT (i.e. /Users/jsmith/tokens/synapse_oidc_token)
 SYNAPSE_PAT=$(cat ${SYNAPSE_TOKEN_FILE})  # The Synapse Personal Access Token
 
 # Endpoints
