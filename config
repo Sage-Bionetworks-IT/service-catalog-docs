@@ -1,0 +1,6 @@
+# put this file in your ~/.aws folder, if you already have this file
+# then append the below profile to it
+
+[profile service-catalog]
+region=us-east-1
+credential_process = "/absolute/path/to/synapse_creds.sh" "https://sc.sageit.org" "<PERSONAL_ACCESS_TOKEN>"
